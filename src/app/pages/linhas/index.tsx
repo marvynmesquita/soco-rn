@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity,ScrollView } from 'react-native';
 import{useNavigation} from "@react-navigation/native"
 
 import styles from './styles'
-const API_URL = 'http://192.168.1.73:3001/linhas';
+const API_URL = 'https://soco-backend.onrender.com/linhas';
 
 let listLinhas: any[] = [];
 
@@ -14,7 +14,7 @@ const buscaLinhas = () => {
     .then((data) => {
       listLinhas = data.map((linha: any) => {
         return (
-          <TouchableOpacity key={linha.id_linha} style={styles.button}>
+          <TouchableOpacity key={linha._id} style={styles.button}>
             <Text>{linha.origem} - {linha.destino}</Text>
           </TouchableOpacity>
         );

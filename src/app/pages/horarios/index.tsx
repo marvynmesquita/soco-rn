@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles'; // Certifique-se de que o arquivo styles.js esteja definido corretamente
 
-const API_URL = 'http://192.168.1.73:3001/horarios'; // Verifique se o endereço IP e a porta estão corretos e acessíveis
+const API_URL = 'https://soco-backend.onrender.com/horarios'; // Verifique se o endereço IP e a porta estão corretos e acessíveis
 
 export default function Horarios() {
   const [horarios, setHorarios] = useState([]);
@@ -48,7 +48,7 @@ export default function Horarios() {
     <ScrollView>
       <View style={styles.container}>
         {horarios.map((horario) => (
-          <Text key={horario.id_horario} style={styles.horarioText}>
+          <Text key={horario._id} style={styles.horarioText}>
              {horario.horario_partida}          x          {horario.horario_chegada}
           </Text>
         ))}
